@@ -1,5 +1,5 @@
 {
-  "name": "use-async",
+  "name": "use-async-machine",
   "version": "0.0.1",
   "description": "A hook for an async state machine",
   "main": "src/index.ts",
