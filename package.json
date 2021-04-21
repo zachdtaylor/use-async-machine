@@ -1,18 +1,22 @@
 {
   "name": "use-async-machine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A hook for an async state machine",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/index.ts --outdir=lib"
+    "build": "npm run build:commonjs && npm run build:types",
+    "build:commonjs": "rimraf ./lib && esbuild src/index.ts --outdir=lib --format=cjs",
+    "build:types": "rimraf ./types && tsc --project tsconfig.types.json"
   },
   "author": "Zach Taylor",
   "repository": "github:zachtylr21/use-async-machine",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "esbuild": "^0.11.12",
+    "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
   },
   "dependencies": {
