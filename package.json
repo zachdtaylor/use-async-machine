@@ -1,8 +1,9 @@
 {
   "name": "use-async-machine",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A hook for an async state machine",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:commonjs && npm run build:types",
