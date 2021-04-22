@@ -74,5 +74,15 @@ export default function useAsync<TData, TError, TContext>(
     });
   }, [state, fn]);
 
-  return { state, dispatch };
+  return {
+    state: state.state,
+    data: state.data,
+    error: state.error,
+    context: state.context,
+    isIdle: state.state === "idle",
+    isError: state.state === "error",
+    isLoading: state.state === "loading",
+    isSuccess: state.state === "success",
+    dispatch,
+  };
 }

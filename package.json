@@ -1,6 +1,6 @@
 {
   "name": "use-async-machine",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A hook for an async state machine",
   "main": "lib/index.js",
   "types": "types/index.d.ts",

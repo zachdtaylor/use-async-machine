@@ -1,11 +1,13 @@
 import type { Dispatch } from "react";
 
+type AsyncState = "idle" | "loading" | "success" | "error";
+
 export interface UseAsyncState<
   TData = unknown,
   TError = unknown,
   TContext = unknown
 > {
-  state: "idle" | "loading" | "success" | "error";
+  state: AsyncState;
   data?: TData;
   error?: TError;
   context?: TContext;
@@ -40,6 +42,13 @@ export interface UseAsyncReducer<TData, TError, TContext> {
 }
 
 export interface UseAsync<TData, TError, TContext> {
-  state: UseAsyncState<TData, TError, TContext>;
+  state: AsyncState;
+  data: TData;
+  error: TError;
+  context: TContext;
+  isIdle: Boolean;
+  isLoading: Boolean;
+  isError: Boolean;
+  isSuccess: Boolean;
   dispatch: Dispatch<UseAsyncEvent<TData, TError, TContext>>;
 }
