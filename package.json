@@ -6,6 +6,7 @@
   "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm run build && npm publish",
     "build": "npm run build:commonjs && npm run build:types",
     "build:commonjs": "rimraf ./lib && esbuild src/index.ts --outdir=lib --bundle --external:react --format=cjs --target=node12",
     "build:types": "rimraf ./types && tsc --project tsconfig.types.json"
