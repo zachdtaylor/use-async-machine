@@ -65,7 +65,11 @@ function asyncReducer<TData, TError, TContext>(
 
 const initialState: UseAsyncState = { state: "idle" };
 
-export default function useAsync<TData, TError, TContext>(
+export default function useAsync<
+  TData = unknown,
+  TError = unknown,
+  TContext = unknown
+>(
   fn: (state: UseAsyncState<TData, TError, TContext>) => Promise<TData>,
   options: UseAsyncOptions<TData, TError, TContext> = {}
 ): UseAsync<TData, TError, TContext> {

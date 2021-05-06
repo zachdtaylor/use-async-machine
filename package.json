@@ -1,12 +1,11 @@
 {
   "name": "use-async-machine",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "A hook for an async state machine",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm run build && npm publish",
     "build": "npm run build:commonjs && npm run build:types",
     "build:commonjs": "rimraf ./lib && esbuild src/index.ts --outdir=lib --bundle --external:react --format=cjs --target=node12",
     "build:types": "rimraf ./types && tsc --project tsconfig.types.json"
